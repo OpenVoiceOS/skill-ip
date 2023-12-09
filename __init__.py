@@ -17,8 +17,8 @@ import os
 from ifaddr import get_adapters
 
 from adapt.intent import IntentBuilder
-from mycroft.skills.core import MycroftSkill, intent_handler
-import mycroft.audio
+from ovos_workshop.skills import OVOSSkill
+from ovos_workshop.decorators import intent_handler
 from subprocess import check_output, CalledProcessError
 
 
@@ -60,12 +60,9 @@ def which(program):
     return False
 
 
-class IPSkill(MycroftSkill):
+class IPSkill(OVOSSkill):
     SEC_PER_LETTER = 0.65  # timing based on Mark 1 screen
     LETTERS_PER_SCREEN = 9.0
-
-    def __init__(self):
-        super(IPSkill, self).__init__(name="IPSkill")
 
     def initialize(self):
         # Only register the SSID intent if iwlist is installed on the system
@@ -88,7 +85,7 @@ class IPSkill(MycroftSkill):
             self.gui_show(ip)
             ip_spoken = ip.replace(".", " "+dot+" ")
             self.speak_dialog("my address is",
-                              {'ip': ip_spoken})
+                              {'ip': ip_spoken}, wait=True)
             time.sleep((self.LETTERS_PER_SCREEN + len(ip)) *
                        self.SEC_PER_LETTER)
         else:
@@ -99,11 +96,11 @@ class IPSkill(MycroftSkill):
                 self.gui_show(ip)
                 ip_spoken = ip.replace(".", " " + dot + " ")
                 self.speak_dialog("my address on X is Y",
-                                  {'interface': iface, 'ip': ip_spoken})
+                                  {'interface': iface, 'ip': ip_spoken},
+                                  wait=True)
                 time.sleep((self.LETTERS_PER_SCREEN + len(ip)) *
                            self.SEC_PER_LETTER)
 
-        mycroft.audio.wait_while_speaking()
         self.enclosure.activate_mouth_events()
         self.enclosure.mouth_reset()
 
@@ -167,20 +164,13 @@ class IPSkill(MycroftSkill):
     def speak_last_digits(self, ip):
         ip_end = ip.split(".")[-1]
         self.enclosure.mouth_text(ip_end)
-        self.speak_dialog("last digits", data={"digits": ip_end})
-        time.sleep(3)  # Show for at least 3 seconds
-        mycroft.audio.wait_while_speaking()
+        self.speak_dialog("last digits", data={"digits": ip_end}, wait=True)
 
     def speak_multiple_last_digits(self, addr):
         for key in addr:
             ip_end = addr[key].split(".")[-1]
             self.speak_dialog("last digits device",
-                              data={'device': key, 'digits': ip_end})
+                              data={'device': key, 'digits': ip_end}, wait=True)
             self.gui_show(addr)
             self.enclosure.mouth_text(ip_end)
-            time.sleep(3)  # Show for at least 3 seconds
-            mycroft.audio.wait_while_speaking()
 
-
-def create_skill():
-    return IPSkill()

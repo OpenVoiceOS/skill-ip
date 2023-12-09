@@ -1,1 +1,2 @@
 ifaddr
+ovos-workshop
