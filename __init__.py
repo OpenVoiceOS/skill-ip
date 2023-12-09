@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import time
 import os
 from ifaddr import get_adapters
 
@@ -85,6 +86,8 @@ class IPSkill(OVOSSkill):
             ip_spoken = ip.replace(".", " "+dot+" ")
             self.speak_dialog("my address is",
                               {'ip': ip_spoken}, wait=True)
+            time.sleep((self.LETTERS_PER_SCREEN + len(ip)) *
+                       self.SEC_PER_LETTER)
         else:
             self.enclosure.deactivate_mouth_events()
             for iface in addr:
@@ -95,6 +98,8 @@ class IPSkill(OVOSSkill):
                 self.speak_dialog("my address on X is Y",
                                   {'interface': iface, 'ip': ip_spoken},
                                   wait=True)
+                time.sleep((self.LETTERS_PER_SCREEN + len(ip)) *
+                           self.SEC_PER_LETTER)
 
         self.enclosure.activate_mouth_events()
         self.enclosure.mouth_reset()

@@ -28,5 +28,6 @@ Mycroft.ProportionalDelegate {
         Layout.fillWidth: true
         Layout.margins: 10
         text: sessionData.ip
+        color: "white"
     }
 }
