@@ -95,7 +95,7 @@ setup(
     name=f"{SKILL_NAME}",
     version=get_version(),
     url=f"https://github.com/OpenVoiceOS/{SKILL_NAME}",
-    license="Apache2",
+    license="Apache-2.0",
     install_requires=get_requirements("requirements.txt"),
     author=SKILL_AUTHOR,
     author_email="jarbas@openvoiceos.com",
