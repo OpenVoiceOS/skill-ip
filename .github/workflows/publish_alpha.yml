@@ -1,3 +1,5 @@
+# This workflow will generate a distribution and upload it to PyPI
+
 name: Publish Alpha Build ...aX
 on:
   push:
@@ -18,7 +20,7 @@ jobs:
   autotranslate:
     runs-on: ubuntu-latest
     env:
-      API_KEY: ${{secrets.DL_API_KEY}}
+      API_KEY: ${{secrets.DL_API_KEY}} 
     steps:
       - uses: actions/checkout@v3
         with:
@@ -48,9 +50,9 @@ jobs:
         with:
           commit_message: autotranslate
           branch: dev
-
+    
   build_and_publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v3
         with:
