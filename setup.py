@@ -26,9 +26,9 @@ from os import getenv, path, walk
 BASE_PATH = path.abspath(path.dirname(__file__))
 
 
-URL = "https://github.com/OpenVoiceOS/skill-ip"
+URL = "https://github.com/OpenVoiceOS/skill-ovos-ip"
 SKILL_CLAZZ = "IPSkill"  # needs to match __init__.py class name
-PYPI_NAME = "ovos-skill-ip"  # pip install PYPI_NAME
+PYPI_NAME = "skill-ovos-ip"  # pip install PYPI_NAME
 
 SKILL_AUTHOR, SKILL_NAME = URL.split(".com/")[-1].split("/")
 SKILL_PKG = SKILL_NAME.lower().replace('-', '_')
