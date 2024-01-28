@@ -7,8 +7,8 @@ import json
 from ovos_utils.bracket_expansion import expand_parentheses, expand_options
 
 
-branch = "dev"
-repo = "skill-ip"
+branch = "update"
+repo = "skill-ovos-ip"
 author = "OpenVoiceOS"
 
 url = f"https://github.com/{author}/{repo}@{branch}"
