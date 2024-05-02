@@ -69,7 +69,7 @@ class IPSkill(OVOSSkill):
             self.register_intent_file("what.ssid.intent",
                                       self.handle_SSID_query)
 
-    @intent_handler(IntentBuilder("IPIntent").require("query").require("IP"))
+    @intent_handler(IntentBuilder("IPIntent").require("query").require("IP").build())
     def handle_query_IP(self, message):
         addr = get_ifaces()
         dot = self.dialog_renderer.render("dot")
@@ -123,7 +123,7 @@ class IPSkill(OVOSSkill):
                 self.speak_dialog("ethernet.connection")
 
     @intent_handler(IntentBuilder("").require("query").require("IP")
-                                     .require("last").require("digits"))
+                                     .require("last").optionally("digits"))
     def handle_query_last_part_IP(self, message):
         ip = None
         addr = get_ifaces()
@@ -154,7 +154,7 @@ class IPSkill(OVOSSkill):
 
     def gui_show(self, ip):
         self.gui['ip'] = ip
-        self.gui.show_page("ip-address.qml")
+        self.gui.show_page("ip-address")
 
     def speak_last_digits(self, ip):
         ip_end = ip.split(".")[-1]
