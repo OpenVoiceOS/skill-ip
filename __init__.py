@@ -69,7 +69,7 @@ class IPSkill(OVOSSkill):
             self.register_intent_file("what.ssid.intent",
                                       self.handle_SSID_query)
 
-    @intent_handler(IntentBuilder("IPIntent").require("query").require("IP").build())
+    @intent_handler(IntentBuilder("IPIntent").require("query").require("IP"))
     def handle_query_IP(self, message):
         addr = get_ifaces()
         dot = self.dialog_renderer.render("dot")
