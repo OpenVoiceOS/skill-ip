@@ -123,7 +123,7 @@ class IPSkill(OVOSSkill):
                 self.speak_dialog("ethernet.connection")
 
     @intent_handler(IntentBuilder("").require("query").require("IP")
-                                     .require("last").require("digits"))
+                                     .require("last").optionally("digits"))
     def handle_query_last_part_IP(self, message):
         ip = None
         addr = get_ifaces()
@@ -154,7 +154,7 @@ class IPSkill(OVOSSkill):
 
     def gui_show(self, ip):
         self.gui['ip'] = ip
-        self.gui.show_page("ip-address.qml")
+        self.gui.show_page("ip-address")
 
     def speak_last_digits(self, ip):
         ip_end = ip.split(".")[-1]
@@ -168,4 +168,3 @@ class IPSkill(OVOSSkill):
                               data={'device': key, 'digits': ip_end}, wait=True)
             self.gui_show(addr)
             self.enclosure.mouth_text(ip_end)
-
