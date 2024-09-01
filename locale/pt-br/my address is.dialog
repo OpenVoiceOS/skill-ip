@@ -1,2 +1,2 @@
-meu endereço I.P. de rede é {{ip}}
-eu estou no endereço I.P. {{ip}}
+eu estou no endereço I.P. {ip}
+meu endereço I.P. de rede é {ip}
