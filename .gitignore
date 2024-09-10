@@ -1,5 +1,18 @@
-__pycache__
-.*.sw?
+dev.env
+.dev_opts.json
+.idea
+*.code-workspace
+*.pyc
+*.swp
+*~
+*.egg-info/
+build
+dist
+.coverage
+/htmlcov
+.installed
+.mypy_cache
+.vscode
+.theia
+.venv/
 
-# skill files
-settings.json
