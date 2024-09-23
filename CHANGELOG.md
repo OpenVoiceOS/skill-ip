@@ -1,13 +1,21 @@
 # Changelog
 
-## [Unreleased](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/HEAD)
+## [0.2.1a1](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.2.1a1) (2024-09-23)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/1c814380917dfc0050ce8cb32ac92471b3fe4815...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.1.0...0.2.1a1)
+
+**Closed issues:**
+
+- Not on PyPi [\#3](https://github.com/OpenVoiceOS/ovos-skill-ip/issues/3)
+- Not pip installable [\#2](https://github.com/OpenVoiceOS/ovos-skill-ip/issues/2)
 
 **Merged pull requests:**
 
-- pt-pt/translate-intents [\#6](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/6) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
-- pt-pt/translate-vocabs [\#5](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/5) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- fix/ip\_render [\#9](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/9) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.0](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.1.0) (2024-09-10)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.2.0...0.1.0)
 
 
 

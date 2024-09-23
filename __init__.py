@@ -13,12 +13,12 @@
 # limitations under the License.
 #
 import os
-from ifaddr import get_adapters
-
-from adapt.intent import IntentBuilder
-from ovos_workshop.skills import OVOSSkill
-from ovos_workshop.decorators import intent_handler
 from subprocess import check_output, CalledProcessError
+
+from ifaddr import get_adapters
+from ovos_workshop.decorators import intent_handler
+from ovos_workshop.intents import IntentBuilder
+from ovos_workshop.skills import OVOSSkill
 
 
 def get_ifaces(ignore_list=None):
@@ -60,8 +60,6 @@ def which(program):
 
 
 class IPSkill(OVOSSkill):
-    SEC_PER_LETTER = 0.65  # timing based on Mark 1 screen
-    LETTERS_PER_SCREEN = 9.0
 
     def initialize(self):
         # Only register the SSID intent if iwlist is installed on the system
@@ -80,16 +78,14 @@ class IPSkill(OVOSSkill):
         elif len(addr) == 1:
             self.enclosure.deactivate_mouth_events()
             iface, ip = addr.popitem()
-            self.enclosure.mouth_text(ip)
             self.gui_show(ip)
-            ip_spoken = ip.replace(".", " "+dot+" ")
+            ip_spoken = ip.replace(".", " " + dot + " ")
             self.speak_dialog("my address is",
                               {'ip': ip_spoken}, wait=True)
         else:
             self.enclosure.deactivate_mouth_events()
             for iface in addr:
                 ip = addr[iface]
-                self.enclosure.mouth_text(ip)
                 self.gui_show(ip)
                 ip_spoken = ip.replace(".", " " + dot + " ")
                 self.speak_dialog("my address on X is Y",
@@ -122,8 +118,8 @@ class IPSkill(OVOSSkill):
             else:
                 self.speak_dialog("ethernet.connection")
 
-    @intent_handler(IntentBuilder("").require("query").require("IP")
-                                     .require("last").optionally("digits"))
+    @intent_handler(IntentBuilder("LastIPDigitsIntent").require("query").require("IP")
+                    .require("last").optionally("digits"))
     def handle_query_last_part_IP(self, message):
         ip = None
         addr = get_ifaces()
@@ -155,16 +151,17 @@ class IPSkill(OVOSSkill):
     def gui_show(self, ip):
         self.gui['ip'] = ip
         self.gui.show_page("ip-address")
+        self.enclosure.mouth_text(ip)
 
     def speak_last_digits(self, ip):
         ip_end = ip.split(".")[-1]
-        self.enclosure.mouth_text(ip_end)
+        self.gui_show(ip_end)
         self.speak_dialog("last digits", data={"digits": ip_end}, wait=True)
 
     def speak_multiple_last_digits(self, addr):
         for key in addr:
             ip_end = addr[key].split(".")[-1]
+            self.gui_show(ip_end)
             self.speak_dialog("last digits device",
-                              data={'device': key, 'digits': ip_end}, wait=True)
-            self.gui_show(addr)
-            self.enclosure.mouth_text(ip_end)
+                              data={'device': key, 'digits': ip_end},
+                              wait=True)
