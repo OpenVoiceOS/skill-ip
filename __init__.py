@@ -161,7 +161,7 @@ class IPSkill(OVOSSkill):
     def speak_multiple_last_digits(self, addr):
         for key in addr:
             ip_end = addr[key].split(".")[-1]
-            self.gui_show(addr)
+            self.gui_show(ip_end)
             self.speak_dialog("last digits device",
                               data={'device': key, 'digits': ip_end},
                               wait=True)
