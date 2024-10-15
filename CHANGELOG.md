@@ -1,21 +1,14 @@
 # Changelog
 
-## [0.2.1a1](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.2.1a1) (2024-09-23)
+## [0.2.2a1](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.2.2a1) (2024-10-15)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.1.0...0.2.1a1)
-
-**Closed issues:**
-
-- Not on PyPi [\#3](https://github.com/OpenVoiceOS/ovos-skill-ip/issues/3)
-- Not pip installable [\#2](https://github.com/OpenVoiceOS/ovos-skill-ip/issues/2)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.2.1...0.2.2a1)
 
 **Merged pull requests:**
 
-- fix/ip\_render [\#9](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/9) ([JarbasAl](https://github.com/JarbasAl))
-
-## [0.1.0](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.1.0) (2024-09-10)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.2.0...0.1.0)
+- Add Catalan translation [\#13](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/13) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- Add Catalan translation [\#12](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/12) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- Add Catalan translation [\#11](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/11) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 
 
 
