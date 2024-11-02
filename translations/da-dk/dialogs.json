@@ -7,27 +7,27 @@
     "det ender med { digits }"
   ],
   "ethernet.connection.dialog": [
-    null
+    "Jeg er på en kablet forbindelse"
   ],
   "dot.dialog": [
-    null
+    "prik"
   ],
   "my address is.dialog": [
-    null,
-    null
+    "Mit netværk I.P. adressen er {ip}",
+    "Jeg er hos I.P. adresse {ip}"
   ],
   "my address on X is Y.dialog": [
-    null
+    "På {interface} min I.P. adressen er {ip}."
   ],
   "last digits device.dialog": [
     "På { device } min I.P. slutter med { digits }",
     "På { device } min I.P. adresse slutter med { digits }",
     "På { device } min I.P. slutter med { digits }",
-    null,
+    "På { device } min I.P. adresse slutter med { cifre }",
     "På { device } slutter det med { digits }"
   ],
   "no network connection.dialog": [
-    null,
-    null
+    "Jeg har ikke en netværksforbindelse endnu",
+    "Jeg er ikke forbundet til et netværk"
   ]
 }
