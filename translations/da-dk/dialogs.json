@@ -1,0 +1,33 @@
+{
+  "last digits.dialog": [
+    "Min I.P. slutter med { digits }",
+    "Min I.P. adresse slutter med { digits }",
+    "Min I.P. slutter med { digits }",
+    "Min I.P. adresse slutter med { digits }",
+    "det ender med { digits }"
+  ],
+  "ethernet.connection.dialog": [
+    null
+  ],
+  "dot.dialog": [
+    null
+  ],
+  "my address is.dialog": [
+    null,
+    null
+  ],
+  "my address on X is Y.dialog": [
+    null
+  ],
+  "last digits device.dialog": [
+    "På { device } min I.P. slutter med { digits }",
+    "På { device } min I.P. adresse slutter med { digits }",
+    "På { device } min I.P. slutter med { digits }",
+    null,
+    "På { device } slutter det med { digits }"
+  ],
+  "no network connection.dialog": [
+    null,
+    null
+  ]
+}
