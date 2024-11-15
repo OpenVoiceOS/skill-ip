@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.4a1](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.2.4a1) (2024-11-15)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.2.3a1...0.2.4a1)
+
+**Merged pull requests:**
+
+- fix: add missing skill.json [\#18](https://github.com/OpenVoiceOS/ovos-skill-ip/pull/18) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.3a1](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.2.3a1) (2024-11-02)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.2.2...0.2.3a1)
