@@ -1,0 +1,24 @@
+{
+    "IP.voc": [
+        "IP",
+        "IP helbide",
+        "sarearen helbide"
+    ],
+    "query.voc": [
+        "nola",
+        "zer",
+        "erakutsi",
+        "esan"
+    ],
+    "digits.voc": [
+        "zenbaki",
+        "zenbakiak",
+        "digitu",
+        "digituak",
+        "atal"
+    ],
+    "last.voc": [
+        "azken|behin betiko",
+        "azken"
+    ]
+}
