@@ -1,8 +1,8 @@
 # Changelog
 
-## [0.2.6a4](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.2.6a4) (2024-12-02)
+## [0.2.6a5](https://github.com/OpenVoiceOS/ovos-skill-ip/tree/0.2.6a5) (2024-12-02)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.2.6a3...0.2.6a4)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-ip/compare/0.2.6a3...0.2.6a5)
 
 **Merged pull requests:**
 
