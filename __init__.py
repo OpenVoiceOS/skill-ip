@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import os
+from shutil import which
 from subprocess import check_output, CalledProcessError
 
 from ifaddr import get_adapters
@@ -42,28 +42,11 @@ def get_ifaces(ignore_list=None):
     return res
 
 
-def which(program):
-    def is_exe(fpath):
-        return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
-
-    fpath, fname = os.path.split(program)
-    if fpath:
-        if is_exe(program):
-            return program
-    else:
-        for path in os.environ["PATH"].split(os.pathsep):
-            exe_file = os.path.join(path, program)
-            if is_exe(exe_file):
-                return exe_file
-
-    return False
-
-
 class IPSkill(OVOSSkill):
 
     def initialize(self):
         # Only register the SSID intent if iwlist is installed on the system
-        if which("iwlist"):
+        if which("iwlist"):  # TODO - use bus events to get this info, not iwlist
             self.register_intent_file("what.ssid.intent",
                                       self.handle_SSID_query)
 
@@ -102,6 +85,7 @@ class IPSkill(OVOSSkill):
             self.speak_dialog("no network connection")
             return
 
+        # TODO - use bus api for PHAL network manager that reports this instead
         try:
             scanoutput = check_output(["iwlist", "wlan0", "scan"])
 
@@ -149,8 +133,7 @@ class IPSkill(OVOSSkill):
         self.enclosure.mouth_reset()
 
     def gui_show(self, ip):
-        self.gui['ip'] = ip
-        self.gui.show_page("ip-address")
+        self.gui.show_text(ip)
         self.enclosure.mouth_text(ip)
 
     def speak_last_digits(self, ip):
